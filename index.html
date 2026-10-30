@@ -208,7 +208,7 @@
                 <nav class="hidden xl:flex items-center space-x-3 lg:space-x-4">
                     <a href="#utama" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-primary hover:text-yellow-500 transition-colors duration-200 py-2">Utama</a>
                     <a href="#jadual" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Jadual</a>
-                    <a href="#peserta" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Senarai Peserta</a>
+                    <a href="#peserta" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Senarai Atlet</a>
                     <a href="#keputusan" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Podium Pingat</a>
                     <a href="#pemenang" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Keputusan Rasmi</a>
                     <a href="#anugerah" class="text-[10px] lg:text-xs font-bold uppercase tracking-wider theme-text-secondary hover:text-yellow-500 transition-colors duration-200 py-2">Anugerah</a>
@@ -240,7 +240,7 @@
             <div class="px-4 pt-3 pb-6 space-y-2 max-h-[calc(100dvh-5rem)] overflow-y-auto">
                 <a href="#utama" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-primary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Utama</a>
                 <a href="#jadual" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Jadual</a>
-                <a href="#peserta" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Senarai Peserta</a>
+                <a href="#peserta" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Senarai Atlet</a>
                 <a href="#keputusan" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Podium Pingat</a>
                 <a href="#pemenang" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Keputusan Rasmi</a>
                 <a href="#anugerah" onclick="toggleMobileMenu()" class="block px-4 py-3 text-xs font-bold uppercase tracking-widest theme-text-secondary hover:bg-yellow-500/10 border-b theme-border min-h-[44px]">Anugerah</a>
@@ -284,7 +284,7 @@
                     <i class="fa-solid fa-trophy mr-2.5"></i> Podium Pingat
                 </a>
                 <a href="#peserta" class="w-full px-6 py-3 bg-transparent border theme-border theme-text-primary font-display font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-yellow-500 hover:text-navy-950 transition-all duration-300 flex items-center justify-center min-h-[48px]">
-                    <i class="fa-solid fa-users mr-2.5"></i> Lihat Senarai Peserta
+                    <i class="fa-solid fa-users mr-2.5"></i> Lihat Senarai Atlet
                 </a>
                 <a href="#pemenang" class="w-full px-6 py-3 bg-transparent border theme-border theme-text-primary font-display font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-yellow-500 hover:text-navy-950 transition-all duration-300 flex items-center justify-center min-h-[48px]">
                     <i class="fa-solid fa-medal mr-2.5"></i> Semak Keputusan Rasmi
@@ -325,8 +325,8 @@
             <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
                 <div class="max-w-xl">
                     <span class="theme-text-muted font-bold uppercase tracking-[0.25em] text-[10px] sm:text-xs">Profil Atlet & Pasukan</span>
-                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl theme-text-primary mt-2 uppercase">Senarai Peserta</h2>
-                    <p class="text-xs sm:text-sm theme-text-secondary mt-2">Pilih acara, kategori dan pusingan kejohanan untuk melihat senarai peserta yang bertanding</p>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl theme-text-primary mt-2 uppercase">Senarai Atlet</h2>
+                    <p class="text-xs sm:text-sm theme-text-secondary mt-2">Pilih acara, kategori dan pusingan kejohanan untuk melihat senarai Atlet yang bertanding</p>
                 </div>
             </div>
 
@@ -379,7 +379,7 @@
                     <div id="noAthletesTableMessage" class="hidden border theme-border theme-surface p-12 text-center">
                         <i class="fa-solid fa-user-slash text-3xl theme-text-muted mb-3 block"></i>
                         <p class="text-sm font-bold uppercase tracking-wider theme-text-primary">Tiada Peserta Ditemui</p>
-                        <p class="text-xs theme-text-muted mt-1">Senarai peserta acara ini belum disahkan atau tiada pendaftaran peserta bagi acara ini.</p>
+                        <p class="text-xs theme-text-muted mt-1">Senarai Atlet acara ini belum disahkan atau tiada pendaftaran peserta bagi acara ini.</p>
                     </div>
                 </div>
             </div>
@@ -668,11 +668,11 @@
                 </button>
                 <button onclick="switchAdminTab('tab-peserta')" class="admin-tab-btn flex items-center p-3 text-left w-auto md:w-full min-w-[120px] transition-all duration-200 hover:bg-yellow-500/10 border border-transparent whitespace-nowrap min-h-[44px]" data-target="tab-peserta">
                     <i class="fa-solid fa-users w-5 text-center mr-2 md:mr-3 theme-text-muted"></i>
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider theme-text-primary">Senarai Peserta</span>
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider theme-text-primary">Senarai Atlet</span>
                 </button>
                 <button onclick="switchAdminTab('tab-pingat')" class="admin-tab-btn flex items-center p-3 text-left w-auto md:w-full min-w-[120px] transition-all duration-200 hover:bg-yellow-500/10 border border-transparent whitespace-nowrap min-h-[44px]" data-target="tab-pingat">
                     <i class="fa-solid fa-ranking-star w-5 text-center mr-2 md:mr-3 theme-text-muted"></i>
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider theme-text-primary">Kedudukan Pingat</span>
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider theme-text-primary">Podium Pingat</span>
                 </button>
                 <button onclick="switchAdminTab('tab-pemenang')" class="admin-tab-btn flex items-center p-3 text-left w-auto md:w-full min-w-[120px] transition-all duration-200 hover:bg-yellow-500/10 border border-transparent whitespace-nowrap min-h-[44px]" data-target="tab-pemenang">
                     <i class="fa-solid fa-medal w-5 text-center mr-2 md:mr-3 theme-text-muted"></i>
@@ -1180,7 +1180,7 @@
                     <ul class="space-y-2 text-xs uppercase tracking-wider">
                         <li><a href="#utama" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Utama</a></li>
                         <li><a href="#jadual" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Jadual</a></li>
-                        <li><a href="#peserta" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Senarai Peserta</a></li>
+                        <li><a href="#peserta" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Senarai Atlet</a></li>
                         <li><a href="#keputusan" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Podium Pingat</a></li>
                         <li><a href="#pemenang" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Keputusan Rasmi</a></li>
                         <li><a href="#anugerah" class="theme-text-muted hover:text-yellow-500 transition-all py-1 inline-block">Anugerah</a></li>
