@@ -268,12 +268,12 @@
             </div>
 
             <h1 class="font-display font-extrabold text-3xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none mb-3 sm:mb-5 uppercase theme-text-primary">
-                ARENA <span class="text-stroke font-extrabold">ATHLETIX</span><br>
+                SKBK <span class="text-stroke font-extrabold">ATHLETIX</span><br>
                 <span>CHAMPIONSHIP</span>
             </h1>
 
             <p class="max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-sm md:text-base theme-text-secondary mb-6 sm:mb-8 font-medium tracking-wider uppercase leading-relaxed px-2">
-                Hub digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
+                Smart digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto px-4 w-full">
@@ -1182,7 +1182,7 @@
                         <span class="font-display font-black text-lg tracking-widest uppercase">ARENA ATHLETIX</span>
                     </div>
                     <p class="theme-text-muted text-xs leading-relaxed max-w-sm">
-                        Hub digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
+                        Smart digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
                     </p>
                     <div class="flex space-x-3 pt-2">
                         <a href="#" class="w-9 h-9 theme-surface border theme-border flex items-center justify-center theme-text-secondary hover:text-yellow-500 hover:border-yellow-500 transition-all text-xs" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1209,7 +1209,7 @@
                     <ul class="space-y-3 text-xs theme-text-muted">
                         <li class="flex items-start space-x-3">
                             <i class="fa-solid fa-location-dot text-yellow-500 text-sm mt-0.5"></i>
-                            <span>SK Bukit Kalam W.Persekutuan Labuan</span>
+                            <span>Unit Sukan & Teknikal SKBK</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fa-solid fa-envelope text-yellow-500 text-sm"></i>
@@ -1217,7 +1217,7 @@
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fa-solid fa-phone text-yellow-500 text-sm"></i>
-                            <span>01953xxxxx</span>
+                            <span>0195362091</span>
                         </li>
                     </ul>
                 </div>
@@ -3197,7 +3197,7 @@
 
         window.setRoundButtonActive = function(roundVal) {
             const label = document.getElementById("currentRoundLabel");
-            if (label) label.textContent = "Pusingan Aktif: " + roundVal.toUpperCase().replace("_", " ");
+            if (label) label.textContent = "Pusingan: " + roundVal.toUpperCase().replace("_", " ");
             
             const rounds = ["saringan_1", "saringan_2", "akhir"];
             rounds.forEach(r => {
@@ -3544,11 +3544,6 @@
             const previousVal = select.value;
             select.innerHTML = "";
 
-            const allOpt = document.createElement("option");
-            allOpt.value = "ALL";
-            allOpt.textContent = "-- SEMUA ACARA --";
-            select.appendChild(allOpt);
-
             if (winnerConfigsData && winnerConfigsData.length > 0) {
                 // Sort winner event configurations alphabetically and numerically (natural sort)
                 const sortedWinnerConfigs = [...winnerConfigsData].sort((a, b) => naturalSortCompare(a.name, b.name));
@@ -3565,9 +3560,14 @@
 
                 if (previousVal && select.querySelector(`option[value="${previousVal}"]`)) {
                     select.value = previousVal;
-                } else {
-                    select.value = "ALL";
+                } else if (sortedWinnerConfigs.length > 0) {
+                    select.value = sortedWinnerConfigs[0].id || sortedWinnerConfigs[0].docId;
                 }
+            } else {
+                const opt = document.createElement("option");
+                opt.value = "";
+                opt.textContent = "Tiada Acara Didaftarkan";
+                select.appendChild(opt);
             }
         };
 
@@ -3576,22 +3576,16 @@
             const eventSelect = document.getElementById("winnerEventSelect");
 
             const queryText = searchInput ? searchInput.value.trim().toUpperCase() : "";
-            const selectedDropdownVal = eventSelect ? eventSelect.value : "ALL";
+            const selectedEventId = eventSelect ? eventSelect.value : "";
 
             const cards = document.querySelectorAll(".winner-event-card");
             let visibleCount = 0;
-            let displayLimitCount = 0;
 
             cards.forEach(card => {
                 const cardEventId = card.getAttribute("data-event-id") || "";
                 const cardFullText = card.textContent.toUpperCase();
 
-                let matchesSelect = false;
-                if (selectedDropdownVal === "ALL") {
-                    matchesSelect = true;
-                } else {
-                    matchesSelect = (cardEventId === selectedDropdownVal);
-                }
+                let matchesSelect = (selectedEventId !== "" && cardEventId === selectedEventId);
 
                 let matchesQuery = true;
                 if (queryText !== "") {
@@ -3599,15 +3593,9 @@
                 }
 
                 if (matchesSelect && matchesQuery) {
-                    if (selectedDropdownVal === "ALL" && displayLimitCount >= 4) {
-                        card.classList.remove("block");
-                        card.classList.add("hidden");
-                    } else {
-                        card.classList.remove("hidden");
-                        card.classList.add("block");
-                        visibleCount++;
-                        displayLimitCount++;
-                    }
+                    card.classList.remove("hidden");
+                    card.classList.add("block");
+                    visibleCount++;
                 } else {
                     card.classList.remove("block");
                     card.classList.add("hidden");
@@ -3618,7 +3606,7 @@
             const existingMsg = document.getElementById("no-winner-msg");
             if (existingMsg) existingMsg.remove();
 
-            if (visibleCount === 0 && cards.length > 0 && grid) {
+            if (visibleCount === 0 && grid) {
                 const msgDiv = document.createElement("div");
                 msgDiv.id = "no-winner-msg";
                 msgDiv.className = "col-span-full border theme-border theme-surface p-12 text-center";
@@ -3627,7 +3615,7 @@
                         <i class="fa-solid fa-magnifying-glass text-lg"></i>
                     </div>
                     <p class="text-xs sm:text-sm font-bold uppercase tracking-wider theme-text-primary mb-1">Tiada Padanan Keputusan</p>
-                    <p class="text-xs theme-text-muted">Tiada keputusan rasmi ditemui mengikut kriteria carian atau tapisan yang anda masukkan.</p>
+                    <p class="text-xs theme-text-muted">Tiada keputusan rasmi ditemui mengikut kriteria carian atau acara yang anda pilih.</p>
                 `;
                 grid.appendChild(msgDiv);
             }
