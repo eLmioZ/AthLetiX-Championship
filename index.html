@@ -264,16 +264,16 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 w-full flex flex-col items-center">
             <div class="inline-flex items-center space-x-2 theme-surface border theme-border px-3 py-1.5 rounded-none mb-4 sm:mb-6 shadow-sm">
                 <span class="h-2 w-2 bg-yellow-500 rounded-full animate-ping"></span>
-                <span class="text-[9px] sm:text-[10px] font-semibold theme-text-secondary tracking-[0.25em] sm:tracking-[0.3em] uppercase">SELAMAT DATANG KE PLATFORM RASMI</span>
+                <span class="text-[9px] sm:text-[10px] font-semibold theme-text-secondary tracking-[0.25em] sm:tracking-[0.3em] uppercase">SELAMAT DATANG KE PLATFORM RASMI KEJOHANAN</span>
             </div>
 
             <h1 class="font-display font-extrabold text-3xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none mb-3 sm:mb-5 uppercase theme-text-primary">
-                SKBK <span class="text-stroke font-extrabold">ATHLETIX</span><br>
+                ARENA <span class="text-stroke font-extrabold">ATHLETIX</span><br>
                 <span>CHAMPIONSHIP</span>
             </h1>
 
             <p class="max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-sm md:text-base theme-text-secondary mb-6 sm:mb-8 font-medium tracking-wider uppercase leading-relaxed px-2">
-                Smart digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
+                Hub digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto px-4 w-full">
@@ -326,21 +326,12 @@
                 <div class="max-w-xl">
                     <span class="theme-text-muted font-bold uppercase tracking-[0.25em] text-[10px] sm:text-xs">Profil Atlet & Pasukan</span>
                     <h2 class="font-display font-extrabold text-3xl sm:text-4xl theme-text-primary mt-2 uppercase">Senarai Atlet</h2>
-                    <p class="text-xs sm:text-sm theme-text-secondary mt-2">Pilih acara, kategori dan pusingan kejohanan untuk melihat senarai Atlet yang bertanding</p>
+                    <p class="text-xs sm:text-sm theme-text-secondary mt-2">Pilih acara dan pusingan kejohanan untuk melihat senarai Atlet Lelaki dan Perempuan yang bertanding.</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="lg:col-span-4 space-y-6">
-                    <div class="border theme-border theme-surface p-5 rounded-none space-y-2">
-                        <label for="categorySelect" class="text-[10px] uppercase tracking-wider theme-text-muted font-bold block"><i class="fa-solid fa-venus-mars mr-1.5"></i> Pilihan Kategori</label>
-                        <select id="categorySelect" onchange="onCategoryChanged()" class="w-full theme-input border theme-border py-3 px-4 text-xs font-medium uppercase tracking-wider focus:outline-none transition-colors min-h-[48px] cursor-pointer">
-                            <option value="ALL">-- SEMUA KATEGORI --</option>
-                            <option value="Lelaki">Lelaki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                    </div>
-
                     <div class="border theme-border theme-surface p-5 rounded-none space-y-2">
                         <label for="eventSelect" class="text-[10px] uppercase tracking-wider theme-text-muted font-bold block"><i class="fa-solid fa-list-check mr-1.5"></i> Pilihan Acara</label>
                         <select id="eventSelect" onchange="onEventChanged()" class="w-full theme-input border theme-border py-3 px-4 text-xs font-medium uppercase tracking-wider focus:outline-none transition-colors min-h-[48px] cursor-pointer">
@@ -357,30 +348,67 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-8 space-y-4">
+                <div class="lg:col-span-8 space-y-8">
                     <h3 id="currentRoundLabel" class="text-xs font-bold uppercase tracking-widest theme-text-primary"></h3>
-                    <div class="border theme-border glass-card overflow-hidden">
-                        <div class="overflow-x-auto min-w-full">
-                            <table class="w-full text-left border-collapse min-w-[500px]">
-                                <thead>
-                                    <tr class="theme-bg-secondary border-b theme-border text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] theme-text-secondary">
-                                        <th class="py-4 px-6 text-center w-20">Lorong</th>
-                                        <th class="py-4 px-6" id="th-nama">Nama Peserta</th>
-                                        <th class="py-4 px-6">Pasukan</th>
-                                        <th class="py-4 px-6 text-center w-28" id="th-bib">No. Bib</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-white/5 text-xs uppercase tracking-wider" id="startListTableBody">
-                                </tbody>
-                            </table>
+                    
+                    <!-- BAHAGIAN ATAS: ATLET LELAKI -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 border-b theme-border pb-2">
+                            <span class="w-3 h-3 bg-blue-500 rounded-none inline-block"></span>
+                            <h4 class="font-display font-extrabold text-sm sm:text-base text-blue-500 uppercase tracking-wider">ATLET LELAKI</h4>
+                        </div>
+                        <div class="border theme-border glass-card overflow-hidden">
+                            <div class="overflow-x-auto min-w-full">
+                                <table class="w-full text-left border-collapse min-w-[500px]">
+                                    <thead>
+                                        <tr class="theme-bg-secondary border-b theme-border text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] theme-text-secondary">
+                                            <th class="py-4 px-6 text-center w-20">Lorong</th>
+                                            <th class="py-4 px-6">Nama Peserta</th>
+                                            <th class="py-4 px-6">Pasukan</th>
+                                            <th class="py-4 px-6 text-center w-28">No. Bib</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-white/5 text-xs uppercase tracking-wider" id="maleStartListTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="noMaleAthletesMessage" class="hidden border theme-border theme-surface p-8 text-center">
+                            <i class="fa-solid fa-mars text-2xl text-blue-500/50 mb-2 block"></i>
+                            <p class="text-xs font-bold uppercase tracking-wider theme-text-primary">Tiada Peserta Lelaki Ditemui</p>
+                            <p class="text-[10px] theme-text-muted mt-1">Senarai Atlet Lelaki untuk acara/pusingan ini belum disahkan atau tiada pendaftaran.</p>
                         </div>
                     </div>
 
-                    <div id="noAthletesTableMessage" class="hidden border theme-border theme-surface p-12 text-center">
-                        <i class="fa-solid fa-user-slash text-3xl theme-text-muted mb-3 block"></i>
-                        <p class="text-sm font-bold uppercase tracking-wider theme-text-primary">Tiada Peserta Ditemui</p>
-                        <p class="text-xs theme-text-muted mt-1">Senarai Atlet acara ini belum disahkan atau tiada pendaftaran peserta bagi acara ini.</p>
+                    <!-- BAHAGIAN BAWAH: ATLET PEREMPUAN -->
+                    <div class="space-y-3 pt-4">
+                        <div class="flex items-center space-x-2 border-b theme-border pb-2">
+                            <span class="w-3 h-3 bg-pink-500 rounded-none inline-block"></span>
+                            <h4 class="font-display font-extrabold text-sm sm:text-base text-pink-500 uppercase tracking-wider">ATLET PEREMPUAN</h4>
+                        </div>
+                        <div class="border theme-border glass-card overflow-hidden">
+                            <div class="overflow-x-auto min-w-full">
+                                <table class="w-full text-left border-collapse min-w-[500px]">
+                                    <thead>
+                                        <tr class="theme-bg-secondary border-b theme-border text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] theme-text-secondary">
+                                            <th class="py-4 px-6 text-center w-20">Lorong</th>
+                                            <th class="py-4 px-6">Nama Peserta</th>
+                                            <th class="py-4 px-6">Pasukan</th>
+                                            <th class="py-4 px-6 text-center w-28">No. Bib</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-white/5 text-xs uppercase tracking-wider" id="femaleStartListTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="noFemaleAthletesMessage" class="hidden border theme-border theme-surface p-8 text-center">
+                            <i class="fa-solid fa-venus text-2xl text-pink-500/50 mb-2 block"></i>
+                            <p class="text-xs font-bold uppercase tracking-wider theme-text-primary">Tiada Peserta Perempuan Ditemui</p>
+                            <p class="text-[10px] theme-text-muted mt-1">Senarai Atlet Perempuan untuk acara/pusingan ini belum disahkan atau tiada pendaftaran.</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -793,26 +821,19 @@
                             <i class="fa-solid fa-file-csv text-green-500 mr-2"></i> Tetapan Maklumat dan Data Peserta
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label for="adminParticipantName" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1">1. Acara</label>
-                                <input type="text" id="adminParticipantName" placeholder="Contoh: 80M TAHUN 1" class="w-full theme-input border theme-border py-2.5 px-3 text-xs focus:outline-none">
-                            </div>
-                            <div>
-                                <label for="adminParticipantCategory" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1">2. Kategori</label>
-                                <select id="adminParticipantCategory" class="w-full theme-input border theme-border py-2.5 px-3 text-xs focus:outline-none cursor-pointer">
-                                    <option value="Lelaki">Lelaki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
+                            <div class="sm:col-span-2">
+                                <label for="adminParticipantName" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1">1. Nama Acara Utama</label>
+                                <input type="text" id="adminParticipantName" placeholder="Contoh: 80M TAHUN 1 / LONTAR PELURU" class="w-full theme-input border theme-border py-2.5 px-3 text-xs focus:outline-none">
                             </div>
                             <div class="sm:col-span-2">
-                                <label for="adminParticipantGsIndividu" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1">
-                                    3. Pautan Google Sheet Individu 
+                                <label for="adminParticipantGsIndividu" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1 text-blue-500">
+                                    2. URL Google Sheet Acara Lelaki (.csv atau /edit)
                                 </label>
                                 <input type="text" id="adminParticipantGsIndividu" placeholder="https://docs.google.com/spreadsheets/d/.../pub?output=csv atau /edit#gid=0" class="w-full theme-input border theme-border py-2.5 px-3 text-xs focus:outline-none">
                             </div>
                             <div class="sm:col-span-2">
-                                <label for="adminParticipantGsKumpulan" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1">
-                                    4. Pautan Google Sheet Kumpulan 
+                                <label for="adminParticipantGsKumpulan" class="text-[9px] uppercase tracking-wider theme-text-muted font-bold block mb-1 text-pink-500">
+                                    3. URL Google Sheet Acara Perempuan (.csv atau /edit)
                                 </label>
                                 <input type="text" id="adminParticipantGsKumpulan" placeholder="https://docs.google.com/spreadsheets/d/.../pub?output=csv atau /edit#gid=0" class="w-full theme-input border theme-border py-2.5 px-3 text-xs focus:outline-none">
                             </div>
@@ -833,9 +854,8 @@
                                 <thead>
                                     <tr class="theme-bg-secondary border-b theme-border theme-text-muted uppercase tracking-wider text-[10px] font-bold">
                                         <th class="p-3">Acara</th>
-                                        <th class="p-3">Kategori</th>
-                                        <th class="p-3">Sheet Ind</th>
-                                        <th class="p-3">Sheet Kum</th>
+                                        <th class="p-3 text-blue-500">Sheet Lelaki</th>
+                                        <th class="p-3 text-pink-500">Sheet Perempuan</th>
                                         <th class="p-3 text-right">Tindakan</th>
                                     </tr>
                                 </thead>
@@ -1232,7 +1252,7 @@
             writeBatch
         } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-        // SEC-01 PATCH: Global Safe HTML Sanitizer Helper for CSV & Input Rendering
+        // Global Safe HTML Sanitizer Helper for CSV & Input Rendering
         function escapeHTML(str) {
             if (str === null || str === undefined) return '';
             return String(str)
@@ -1634,14 +1654,13 @@
         window.realtimeLinksData = { pdfUrl: "", galleryUrl: "", feedbackUrl: "" };
         window.appSettings = {};
 
-        // DAT-01 PATCH: Cache with Time-To-Live (TTL = 3 Minutes)
+        // Cache with Time-To-Live (TTL = 3 Minutes)
         window.fetchedAthletesCache = {};
         window.fetchedWinnersCache = {};
         const CACHE_TTL_MS = 3 * 60 * 1000; // 3 Minutes
 
         window.selectedScheduleDate = "";
         window.selectedEventId = "";
-        window.selectedCategory = "ALL";
         window.selectedRound = "saringan_1";
         window.editingScheduleIndex = -1;
         window.editingAnnouncementIndex = -1;
@@ -1650,7 +1669,7 @@
 
         window.StorageService = StorageService;
 
-        // PERF-01 PATCH: AutoSync Manager with Concurrency Lock & Delay Protection
+        // AutoSync Manager with Concurrency Lock & Delay Protection
         const AutoSyncManager = {
             intervalId: null,
             intervalDuration: 45000,
@@ -1997,7 +2016,6 @@
             });
         };
 
-        // SEC-01 PATCH: Wrapped all CSV / dynamic text outputs with escapeHTML
         window.renderPublicScheduleCards = function() {
             const container = document.getElementById("publicScheduleContainer");
             const emptyMsg = document.getElementById("noScheduleMessage");
@@ -2305,20 +2323,17 @@
             if (!tbody) return;
             tbody.innerHTML = "";
 
-            const sortedData = [...participantConfigsData].sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, { numeric: true, sensitivity: 'base' }));
+            const sortedData = [...participantConfigsData].sort((a, b) => naturalSortCompare(a.name, b.name));
 
             sortedData.forEach((item) => {
                 const index = participantConfigsData.findIndex(p => p.docId === item.docId || p.id === item.id);
                 const tr = document.createElement("tr");
                 tr.className = "hover:bg-yellow-500/10 transition-colors border-b theme-border text-xs";
                 
-                const catClass = item.category === "Lelaki" ? "text-blue-500" : "text-pink-500";
-                
                 tr.innerHTML = `
                     <td class="p-3 font-bold theme-text-primary uppercase">${escapeHTML(item.name || '')}</td>
-                    <td class="p-3 ${catClass} font-bold">${escapeHTML(item.category || '')}</td>
-                    <td class="p-3 truncate max-w-[120px]">${escapeHTML(item.gsIndividu || "-")}</td>
-                    <td class="p-3 truncate max-w-[120px]">${escapeHTML(item.gsKumpulan || "-")}</td>
+                    <td class="p-3 truncate max-w-[120px] text-blue-500 font-sans tabular-nums text-[11px]">${escapeHTML(item.gsIndividu || "-")}</td>
+                    <td class="p-3 truncate max-w-[120px] text-pink-500 font-sans tabular-nums text-[11px]">${escapeHTML(item.gsKumpulan || "-")}</td>
                     <td class="p-3 text-right space-x-2">
                         <button onclick="editParticipantConfig(${index})" class="text-blue-500 hover:text-blue-400 p-1 min-h-[36px] min-w-[36px]" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
                         <button onclick="deleteParticipantConfig(${index})" class="text-red-500 hover:text-red-400 p-1 min-h-[36px] min-w-[36px]" title="Hapus"><i class="fa-solid fa-trash"></i></button>
@@ -2333,14 +2348,12 @@
             if (!config) return;
             editingParticipantDocId = config.id || config.docId;
             document.getElementById("adminParticipantName").value = config.name || "";
-            document.getElementById("adminParticipantCategory").value = config.category || "Lelaki";
             document.getElementById("adminParticipantGsIndividu").value = config.gsIndividu || "";
             document.getElementById("adminParticipantGsKumpulan").value = config.gsKumpulan || "";
         };
 
         window.saveParticipantEventConfig = async function() {
             const nameVal = document.getElementById("adminParticipantName").value.trim();
-            const catVal = document.getElementById("adminParticipantCategory").value;
             const indVal = document.getElementById("adminParticipantGsIndividu").value.trim();
             const kumVal = document.getElementById("adminParticipantGsKumpulan").value.trim();
 
@@ -2351,7 +2364,6 @@
 
             const payload = {
                 name: nameVal.toUpperCase(),
-                category: catVal,
                 gsIndividu: indVal,
                 gsKumpulan: kumVal
             };
@@ -2384,7 +2396,7 @@
             if (!tbody) return;
             tbody.innerHTML = "";
 
-            const sortedData = [...winnerConfigsData].sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, { numeric: true, sensitivity: 'base' }));
+            const sortedData = [...winnerConfigsData].sort((a, b) => naturalSortCompare(a.name, b.name));
 
             sortedData.forEach((item) => {
                 const index = winnerConfigsData.findIndex(w => w.docId === item.docId || w.id === item.id);
@@ -2510,7 +2522,6 @@
             renderPingatConfigTable();
         };
 
-        // SEC-01 PATCH: Wrapped team and rank rendering in escapeHTML
         window.renderPublicMedalTable = function() {
             const container = document.getElementById("medalPodiumContainer");
             const emptyMsg = document.getElementById("noPodiumDataMessage");
@@ -2782,7 +2793,6 @@
             renderPublicMedalTable();
         };
 
-        // SEC-01 PATCH: Wrapped announcement rendering strings in escapeHTML
         window.renderAnnouncements = function() {
             const activeCardsContainer = document.getElementById("adminActiveAnnouncementCards");
             const publicContainer = document.getElementById("publicAnnouncementContainer");
@@ -3137,53 +3147,36 @@
             }
         };
 
-        window.onCategoryChanged = function() {
-            const catSelect = document.getElementById("categorySelect");
-            if (catSelect) {
-                selectedCategory = catSelect.value;
-            }
-            populateEventDropdown();
-            onEventChanged();
-        };
-
         window.populateEventDropdown = function() {
             const select = document.getElementById("eventSelect");
             if (!select) return;
             select.innerHTML = "";
 
-            const catSelect = document.getElementById("categorySelect");
-            const currentCat = catSelect ? catSelect.value : "ALL";
-
-            let filteredEvents = participantConfigsData;
-            if (currentCat !== "ALL") {
-                filteredEvents = participantConfigsData.filter(ev => 
-                    (ev.category || "").toUpperCase() === currentCat.toUpperCase()
-                );
-            }
+            let eventsList = [...participantConfigsData];
 
             // Sort event list using stable natural alphanumeric comparison
-            filteredEvents = [...filteredEvents].sort((a, b) => naturalSortCompare(a.name, b.name));
+            eventsList.sort((a, b) => naturalSortCompare(a.name, b.name));
 
-            if (filteredEvents.length === 0) {
+            if (eventsList.length === 0) {
                 const opt = document.createElement("option");
                 opt.value = "";
-                opt.textContent = "Tiada Acara Bagi Kategori Ini";
+                opt.textContent = "Tiada Acara Didaftarkan";
                 select.appendChild(opt);
                 return;
             }
 
-            filteredEvents.forEach(ev => {
+            eventsList.forEach(ev => {
                 const opt = document.createElement("option");
                 const targetId = ev.id || ev.docId;
                 opt.value = targetId;
-                opt.textContent = `${ev.name || ''} - ${ev.category || ''}`;
+                opt.textContent = ev.name || 'Acara Tanpa Nama';
                 select.appendChild(opt);
             });
 
-            if (selectedEventId && filteredEvents.some(ev => (ev.id || ev.docId) === selectedEventId)) {
+            if (selectedEventId && eventsList.some(ev => (ev.id || ev.docId) === selectedEventId)) {
                 select.value = selectedEventId;
-            } else if (filteredEvents.length > 0) {
-                selectedEventId = filteredEvents[0].id || filteredEvents[0].docId;
+            } else if (eventsList.length > 0) {
+                selectedEventId = eventsList[0].id || eventsList[0].docId;
                 select.value = selectedEventId;
             }
         };
@@ -3191,44 +3184,12 @@
         window.onEventChanged = function() {
             const selectEl = document.getElementById("eventSelect");
             if (!selectEl || !selectEl.value) {
-                renderStartList([]);
+                renderGenderStartList("maleStartListTableBody", "noMaleAthletesMessage", []);
+                renderGenderStartList("femaleStartListTableBody", "noFemaleAthletesMessage", []);
                 return;
             }
             
             selectedEventId = selectEl.value;
-            const currentConfig = participantConfigsData.find(ev => (ev.id || ev.docId) === selectedEventId);
-            
-            if (!currentConfig) return;
-
-            const isRelay = Boolean(currentConfig.gsKumpulan && !currentConfig.gsIndividu);
-            const btnS1 = document.getElementById("btn-round-saringan_1");
-            const btnS2 = document.getElementById("btn-round-saringan_2");
-
-            if (isRelay) {
-                if (btnS1) btnS1.classList.add("hidden");
-                if (btnS2) btnS2.classList.add("hidden");
-                selectedRound = "akhir";
-                setRoundButtonActive("akhir");
-                
-                const thNama = document.getElementById("th-nama");
-                const thBib = document.getElementById("th-bib");
-                if (thNama) thNama.classList.add("hidden");
-                if (thBib) thBib.classList.add("hidden");
-            } else {
-                if (btnS1) btnS1.classList.remove("hidden");
-                if (btnS2) btnS2.classList.remove("hidden");
-                
-                if (selectedRound !== "akhir" && selectedRound !== "saringan_1" && selectedRound !== "saringan_2") {
-                    selectedRound = "saringan_1";
-                }
-                setRoundButtonActive(selectedRound);
-                
-                const thNama = document.getElementById("th-nama");
-                const thBib = document.getElementById("th-bib");
-                if (thNama) thNama.classList.remove("hidden");
-                if (thBib) thBib.classList.remove("hidden");
-            }
-
             updateStartList();
         };
 
@@ -3240,7 +3201,7 @@
 
         window.setRoundButtonActive = function(roundVal) {
             const label = document.getElementById("currentRoundLabel");
-            if (label) label.textContent = "Pusingan: " + roundVal.toUpperCase().replace("_", " ");
+            if (label) label.textContent = "Pusingan Aktif: " + roundVal.toUpperCase().replace("_", " ");
             
             const rounds = ["saringan_1", "saringan_2", "akhir"];
             rounds.forEach(r => {
@@ -3263,32 +3224,20 @@
             return clean;
         };
 
-        // DAT-01 PATCH: Read cache with expiration TTL check
-        window.updateStartList = async function() {
-            const currentConfig = participantConfigsData.find(ev => (ev.id || ev.docId) === selectedEventId);
-            if (!currentConfig) {
-                renderStartList([]);
-                return;
-            }
-
-            const rawTargetUrl = currentConfig.gsIndividu || currentConfig.gsKumpulan;
-            const targetUrl = normalizeGoogleSheetUrl(rawTargetUrl);
-            const isKumpulanSheet = Boolean(!currentConfig.gsIndividu && currentConfig.gsKumpulan);
-
-            if (!targetUrl) {
-                renderStartList([], isKumpulanSheet);
-                return;
-            }
+        // Helper Function parsing CSV data
+        async function fetchAthletesDataFromUrl(url) {
+            if (!url) return [];
+            const targetUrl = normalizeGoogleSheetUrl(url);
+            if (!targetUrl) return [];
 
             const now = Date.now();
             if (fetchedAthletesCache[targetUrl] && (now - fetchedAthletesCache[targetUrl].timestamp < CACHE_TTL_MS)) {
-                const filtered = fetchedAthletesCache[targetUrl].data.filter(ath => ath.round === selectedRound);
-                renderStartList(filtered, isKumpulanSheet);
-                return;
+                return fetchedAthletesCache[targetUrl].data;
             }
 
             try {
                 const res = await fetch(targetUrl);
+                if (!res.ok) return [];
                 const csvText = await res.text();
                 const rows = parseCSVText(csvText);
 
@@ -3302,55 +3251,59 @@
                         const row = rows[i];
                         if (!row || row.length < 2) continue;
 
-                        if (isKumpulanSheet) {
-                            const lane = map.lane !== undefined ? parseInt(row[map.lane]) : (parseInt(row[0]) || (i - startIndex + 1));
-                            const team = map.team !== undefined ? row[map.team] : [row[1], row[2], row[3], row[4]].filter(Boolean).join(" ").trim();
-                            const roundVal = parseRoundIndicator(map.round !== undefined ? row[map.round] : (row[5] || row[row.length - 1]));
-                            if (team) {
-                                parsedAthletes.push({
-                                    eventId: selectedEventId,
-                                    round: roundVal || "akhir",
-                                    lane: lane,
-                                    name: "",
-                                    team: team.toUpperCase(),
-                                    bib: ""
-                                });
-                            }
-                        } else {
-                            const lane = map.lane !== undefined ? parseInt(row[map.lane]) : (parseInt(row[0]) || (i - startIndex + 1));
-                            const name = map.player !== undefined ? row[map.player] : [row[1], row[2]].filter(Boolean).join(" ").trim();
-                            const team = map.team !== undefined ? row[map.team] : (row[3] || "");
-                            const bib = map.bib !== undefined ? row[map.bib] : (row[4] || "");
-                            const roundVal = parseRoundIndicator(map.round !== undefined ? row[map.round] : (row[5] || row[row.length - 1]));
+                        const lane = map.lane !== undefined ? parseInt(row[map.lane]) : (parseInt(row[0]) || (i - startIndex + 1));
+                        const name = map.player !== undefined ? row[map.player] : [row[1], row[2]].filter(Boolean).join(" ").trim();
+                        const team = map.team !== undefined ? row[map.team] : (row[3] || "");
+                        const bib = map.bib !== undefined ? row[map.bib] : (row[4] || "");
+                        const roundVal = parseRoundIndicator(map.round !== undefined ? row[map.round] : (row[5] || row[row.length - 1]));
 
-                            if (name || team) {
-                                parsedAthletes.push({
-                                    eventId: selectedEventId,
-                                    round: roundVal || "saringan_1",
-                                    lane: lane,
-                                    name: (name || "").toUpperCase(),
-                                    team: (team || "").toUpperCase(),
-                                    bib: bib
-                                });
-                            }
+                        if (name || team) {
+                            parsedAthletes.push({
+                                round: roundVal || "saringan_1",
+                                lane: isNaN(lane) ? 1 : lane,
+                                name: (name || "").toUpperCase(),
+                                team: (team || "").toUpperCase(),
+                                bib: bib
+                            });
                         }
                     }
                 }
 
                 fetchedAthletesCache[targetUrl] = { data: parsedAthletes, timestamp: now };
-                const filtered = parsedAthletes.filter(ath => ath.round === selectedRound);
-                renderStartList(filtered, isKumpulanSheet);
+                return parsedAthletes;
 
             } catch (err) {
-                console.error("Gagal memuat data:", err);
-                renderStartList([], isKumpulanSheet);
+                console.warn("Gagal memuat CSV dari URL:", targetUrl, err);
+                return [];
             }
+        }
+
+        window.updateStartList = async function() {
+            const currentConfig = participantConfigsData.find(ev => (ev.id || ev.docId) === selectedEventId);
+            if (!currentConfig) {
+                renderGenderStartList("maleStartListTableBody", "noMaleAthletesMessage", []);
+                renderGenderStartList("femaleStartListTableBody", "noFemaleAthletesMessage", []);
+                return;
+            }
+
+            const urlLelaki = currentConfig.gsIndividu || "";
+            const urlPerempuan = currentConfig.gsKumpulan || "";
+
+            const [maleData, femaleData] = await Promise.all([
+                fetchAthletesDataFromUrl(urlLelaki),
+                fetchAthletesDataFromUrl(urlPerempuan)
+            ]);
+
+            const filteredMale = maleData.filter(ath => ath.round === selectedRound);
+            const filteredFemale = femaleData.filter(ath => ath.round === selectedRound);
+
+            renderGenderStartList("maleStartListTableBody", "noMaleAthletesMessage", filteredMale);
+            renderGenderStartList("femaleStartListTableBody", "noFemaleAthletesMessage", filteredFemale);
         };
 
-        // SEC-01 PATCH: HTML Escaping for Start List
-        window.renderStartList = function(athletes, isRelaySheet = false) {
-            const tbody = document.getElementById("startListTableBody");
-            const emptyMsg = document.getElementById("noAthletesTableMessage");
+        window.renderGenderStartList = function(tbodyId, emptyMsgId, athletes) {
+            const tbody = document.getElementById(tbodyId);
+            const emptyMsg = document.getElementById(emptyMsgId);
             if (!tbody || !emptyMsg) return;
             
             tbody.innerHTML = "";
@@ -3368,38 +3321,27 @@
             }
             emptyMsg.classList.add("hidden");
 
+            athletes.sort((a, b) => a.lane - b.lane);
+
             athletes.forEach(ath => {
                 const tr = document.createElement("tr");
                 tr.className = "hover:bg-yellow-500/10 transition-colors border-b theme-border";
                 
-                if (isRelaySheet) {
-                    const badgeStyle = getTeamBadgeStyle(ath.team);
-                    tr.innerHTML = `
-                        <td class="py-4 px-6 text-center font-sans tabular-nums font-bold theme-text-primary">${ath.lane}</td>
-                        <td colspan="3" class="py-4 px-6 font-bold theme-text-primary">
-                            <span class="inline-block px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded border ${badgeStyle}">
-                                ${escapeHTML(ath.team || '')}
-                            </span>
-                        </td>
-                    `;
-                } else {
-                    const badgeStyle = getTeamBadgeStyle(ath.team);
-                    tr.innerHTML = `
-                        <td class="py-4 px-6 text-center font-sans tabular-nums font-bold theme-text-primary">${ath.lane}</td>
-                        <td class="py-4 px-6 font-bold theme-text-primary uppercase">${escapeHTML(ath.name || '-')}</td>
-                        <td class="py-4 px-6">
-                            <span class="inline-block px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest rounded border ${badgeStyle}">
-                                ${escapeHTML(ath.team || '-')}
-                            </span>
-                        </td>
-                        <td class="py-4 px-6 text-center font-sans tabular-nums font-bold theme-text-secondary">${escapeHTML(ath.bib || '-')}</td>
-                    `;
-                }
+                const badgeStyle = getTeamBadgeStyle(ath.team);
+                tr.innerHTML = `
+                    <td class="py-4 px-6 text-center font-sans tabular-nums font-bold theme-text-primary">${ath.lane}</td>
+                    <td class="py-4 px-6 font-bold theme-text-primary uppercase">${escapeHTML(ath.name || '-')}</td>
+                    <td class="py-4 px-6">
+                        <span class="inline-block px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest rounded border ${badgeStyle}">
+                            ${escapeHTML(ath.team || '-')}
+                        </span>
+                    </td>
+                    <td class="py-4 px-6 text-center font-sans tabular-nums font-bold theme-text-secondary">${escapeHTML(ath.bib || '-')}</td>
+                `;
                 tbody.appendChild(tr);
             });
         };
 
-        // DAT-01 PATCH: Read winner sheet data with expiration check
         window.fetchSheetWinnersData = async function(url, configDocId, genderLabel) {
             if (!url) return [];
             const targetUrl = normalizeGoogleSheetUrl(url);
@@ -3498,7 +3440,6 @@
             filterWinnersBySearch();
         };
 
-        // SEC-01 PATCH: Wrapped all CSV winner variables in escapeHTML
         window.createCombinedWinnerCard = function(config, winnersLelaki, winnersPerempuan) {
             if (!config) return null;
 
@@ -3766,7 +3707,6 @@
             }
         };
 
-        // SEC-02 PATCH: Input sanitization & tightened validation logic
         window.verifyAdminPassword = function() {
             const pwdInput = document.getElementById("adminPasswordInput");
             const usrInput = document.getElementById("adminUsername");
