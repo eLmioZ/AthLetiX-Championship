@@ -281,7 +281,7 @@
                     <i class="fa-regular fa-calendar-days mr-2.5"></i> Lihat Jadual & Acara
                 </a>
                 <a href="#keputusan" class="w-full px-6 py-3 bg-transparent border theme-border theme-text-primary font-display font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-yellow-500 hover:text-navy-950 transition-all duration-300 flex items-center justify-center min-h-[48px]">
-                    <i class="fa-solid fa-trophy mr-2.5"></i> Podium Pingat
+                    <i class="fa-solid fa-trophy mr-2.5"></i> Lihat Podium Pingat
                 </a>
                 <a href="#peserta" class="w-full px-6 py-3 bg-transparent border theme-border theme-text-primary font-display font-extrabold text-xs uppercase tracking-[0.2em] hover:bg-yellow-500 hover:text-navy-950 transition-all duration-300 flex items-center justify-center min-h-[48px]">
                     <i class="fa-solid fa-users mr-2.5"></i> Lihat Senarai Atlet
@@ -742,10 +742,6 @@
                 <div id="tab-jadual" class="admin-tab-content hidden space-y-6">
                     <div class="border-b theme-border pb-3 mb-6 flex justify-between items-center flex-wrap gap-2">
                         <h2 class="font-display font-extrabold text-xl theme-text-primary uppercase tracking-wider">Pengurusan Jadual Acara</h2>
-                        <label class="px-4 py-2 bg-green-600 text-white font-bold text-[10px] uppercase tracking-wider transition-colors rounded cursor-pointer flex items-center min-h-[40px]">
-                            <i class="fa-solid fa-file-import mr-2"></i> Import Jadual (CSV / Sheet)
-                            <input type="file" accept=".csv,.xlsx" class="hidden" onchange="handleCSVUpload(event, 'schedule')">
-                        </label>
                     </div>
 
                     <div class="border theme-border theme-surface p-5 space-y-4">
@@ -3201,7 +3197,7 @@
 
         window.setRoundButtonActive = function(roundVal) {
             const label = document.getElementById("currentRoundLabel");
-            if (label) label.textContent = "Pusingan: " + roundVal.toUpperCase().replace("_", " ");
+            if (label) label.textContent = "Pusingan Aktif: " + roundVal.toUpperCase().replace("_", " ");
             
             const rounds = ["saringan_1", "saringan_2", "akhir"];
             rounds.forEach(r => {
@@ -3845,3 +3841,4 @@
     </script>
 </body>
 </html>
+```e
