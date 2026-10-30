@@ -264,16 +264,16 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 w-full flex flex-col items-center">
             <div class="inline-flex items-center space-x-2 theme-surface border theme-border px-3 py-1.5 rounded-none mb-4 sm:mb-6 shadow-sm">
                 <span class="h-2 w-2 bg-yellow-500 rounded-full animate-ping"></span>
-                <span class="text-[9px] sm:text-[10px] font-semibold theme-text-secondary tracking-[0.25em] sm:tracking-[0.3em] uppercase">SELAMAT DATANG KE PLATFORM RASMI KEJOHANAN</span>
+                <span class="text-[9px] sm:text-[10px] font-semibold theme-text-secondary tracking-[0.25em] sm:tracking-[0.3em] uppercase">SELAMAT DATANG KE PLATFORM RASMI</span>
             </div>
 
             <h1 class="font-display font-extrabold text-3xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none mb-3 sm:mb-5 uppercase theme-text-primary">
-                ARENA <span class="text-stroke font-extrabold">ATHLETIX</span><br>
+                SKBK <span class="text-stroke font-extrabold">ATHLETIX</span><br>
                 <span>CHAMPIONSHIP</span>
             </h1>
 
             <p class="max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-sm md:text-base theme-text-secondary mb-6 sm:mb-8 font-medium tracking-wider uppercase leading-relaxed px-2">
-                Hub digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
+                Smart digital maklumat Kejohanan Olahraga melalui platform yang sistematik, efisien dan interaktif.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto px-4 w-full">
@@ -2994,6 +2994,11 @@
             loadAnugerahData();
         };
 
+        // Helper function for natural alphanumeric sorting (Numbers ascending numerically, then Letters A-Z case-insensitively)
+        window.naturalSortCompare = function(a, b) {
+            return (a || '').localeCompare(b || '', undefined, { numeric: true, sensitivity: 'base' });
+        };
+
         window.renderAnugerahConfigTable = function() {
             const tbody = document.getElementById("adminAnugerahConfigTableBody");
             if (!tbody) return;
@@ -3155,6 +3160,9 @@
                     (ev.category || "").toUpperCase() === currentCat.toUpperCase()
                 );
             }
+
+            // Sort event list using stable natural alphanumeric comparison
+            filteredEvents = [...filteredEvents].sort((a, b) => naturalSortCompare(a.name, b.name));
 
             if (filteredEvents.length === 0) {
                 const opt = document.createElement("option");
@@ -3605,7 +3613,10 @@
             select.appendChild(allOpt);
 
             if (winnerConfigsData && winnerConfigsData.length > 0) {
-                winnerConfigsData.forEach(config => {
+                // Sort winner event configurations alphabetically and numerically (natural sort)
+                const sortedWinnerConfigs = [...winnerConfigsData].sort((a, b) => naturalSortCompare(a.name, b.name));
+
+                sortedWinnerConfigs.forEach(config => {
                     if (!config) return;
 
                     const opt = document.createElement("option");
